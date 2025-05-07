@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import UseEffect from './components/UseEffect'
+import UseCallback from './components/UseCallback'
 
 function App() {
 
@@ -43,7 +44,9 @@ function App() {
         <button onClick={togglecolor}>toggle color</button>
       </div> */}
 
-      <UseEffect/>
+      {/* <UseEffect/> */}
+
+      <UseCallback/>
     </>
   )
 }

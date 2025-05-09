@@ -2,6 +2,7 @@ import { useState } from 'react'
 import UseEffect from './components/UseEffect'
 import UseCallback from './components/UseCallback'
 import UseMemoo from './components/UseMemoo'
+import UseReff from './components/UseReff'
 
 function App() {
 
@@ -49,7 +50,9 @@ function App() {
 
       {/* <UseCallback/> */}
 
-      <UseMemoo/>
+      {/* <UseMemoo/> */}
+
+      <UseReff/>
     </>
   )
 }

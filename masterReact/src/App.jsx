@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Name from "./components/Name";
 import Form from "./components/Form";
+import Mapping from "./components/Mapping";
+import Todo from "./components/Todo";
 
 const App = () => {
   // let name = "";
@@ -33,7 +35,13 @@ const App = () => {
       <button onClick={reset}>reset</button> */}
 
 
-      <Form/>
+      {/* <Form/> */}
+
+      {/* <Mapping/> */}
+
+      <Todo/>
+
+
     </>
   );
 };

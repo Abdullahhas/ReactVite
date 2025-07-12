@@ -3,6 +3,12 @@ import Name from "./components/Name";
 import Form from "./components/Form";
 import Mapping from "./components/Mapping";
 import Todo from "./components/Todo";
+import ApiCall from "./components/ApiCall";
+import ClickTitle from "./components/ClickTitle";
+import SimpleTodo from "./components/SimpleTodo";
+import UseRef from "./components/UseRef";
+import PrevValueExample from "./components/PrevVal";
+import PrevVal from "./components/PrevVal";
 
 const App = () => {
   // let name = "";
@@ -39,7 +45,18 @@ const App = () => {
 
       {/* <Mapping/> */}
 
-      <Todo/>
+      {/* <Todo/> */}
+
+      {/* <ApiCall/> */}
+
+      {/* <ClickTitle/> */}
+
+      {/* <SimpleTodo/> */}
+
+
+      {/* <UseRef/> */}
+
+      <PrevVal/>
 
 
     </>

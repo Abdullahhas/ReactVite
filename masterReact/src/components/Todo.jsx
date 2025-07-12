@@ -1,21 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Todo = () => {
   const [name, setName] = useState('');
   const [todo, setTodo] = useState([]);
-  
 
+ 
   const submit = (e) => {
     e.preventDefault();
+    if (name.trim() === '') return;
     setTodo([...todo, name]);
     setName('');
-    
   };
 
   const remove = (index) => {
     setTodo(todo.filter((_, idx) => idx !== index));
   };
-
 
   return (
     <>
@@ -35,7 +34,6 @@ const Todo = () => {
           <div key={index}>
             <p>{todo}</p>
             <button onClick={() => remove(index)}>remove</button>
-            <button onClick={()=> edit(index)}>edit</button>
           </div>
         ))}
       </div>

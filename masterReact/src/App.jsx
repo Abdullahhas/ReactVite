@@ -9,6 +9,12 @@ import SimpleTodo from "./components/SimpleTodo";
 import UseRef from "./components/UseRef";
 import PrevValueExample from "./components/PrevVal";
 import PrevVal from "./components/PrevVal";
+import Child from "./components/Child";
+
+import { BrowserRouter  , Route , Routes , Link} from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const App = () => {
   // let name = "";
@@ -26,6 +32,12 @@ const App = () => {
   // const reset = () => {
   //   setCounter(0)
   // };
+
+  // const [count , setCount] = useState(0)
+
+  // const handleClick = () => {
+  //   console.log("Button click from child")
+  // }
 
   return (
     <>
@@ -56,8 +68,26 @@ const App = () => {
 
       {/* <UseRef/> */}
 
-      <PrevVal/>
+      {/* <PrevVal/> */}
 
+      {/* <h1 > count : {count} </h1>
+      <button onClick={()=>setCount(count+1)}>add</button>
+
+        <Child onclick = {handleClick}/> */}
+
+        <BrowserRouter>
+
+            <nav>
+              <Link to='/'>Home</Link>
+              <Link to='/about'>About</Link>
+              <Link to='/contact'>Contact</Link>
+            </nav>
+            <Routes>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/about" element={<About/>}/>
+              <Route path="/contact" element={<Contact/>}/>
+            </Routes>
+        </BrowserRouter>
 
     </>
   );

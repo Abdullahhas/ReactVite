@@ -15,6 +15,12 @@ import { BrowserRouter  , Route , Routes , Link} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import { useAuth } from "./context/authContext";
+import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
+import { useTheme } from "./context/ThemeContext";
+import ThemeToggle from "./components/ThemeToggle";
+
 
 const App = () => {
   // let name = "";
@@ -37,10 +43,15 @@ const App = () => {
 
   // const handleClick = () => {
   //   console.log("Button click from child")
+
+
   // }
 
+
+  const {user} = useAuth()
+  const {theme} = useTheme()
   return (
-    <>
+    <div className={theme === 'dark' ? 'dark-mode' : 'light-mode'}>
       {/* name.jsx
       <Name name = 'ali' />
       <Name name = 'abdullah' />
@@ -75,21 +86,31 @@ const App = () => {
 
         <Child onclick = {handleClick}/> */}
 
-        <BrowserRouter>
+        {/* // <BrowserRouter>
 
-            <nav>
-              <Link to='/'>Home</Link>
-              <Link to='/about'>About</Link>
-              <Link to='/contact'>Contact</Link>
-            </nav>
-            <Routes>
-              <Route path="/" element={<Home/>}/>
-              <Route path="/about" element={<About/>}/>
-              <Route path="/contact" element={<Contact/>}/>
-            </Routes>
-        </BrowserRouter>
+        //     <nav>
+        //       <Link to='/'>Home</Link>
+        //       <Link to='/about'>About</Link>
+        //       <Link to='/contact'>Contact</Link>
+        //     </nav>
+        //     <Routes>
+        //       <Route path="/" element={<Home/>}/>
+        //       <Route path="/about" element={<About/>}/>
+        //       <Route path="/contact" element={<Contact/>}/>
+        //     </Routes>
+        // </BrowserRouter> */}
 
-    </>
+
+          <h3>Auth demo</h3>
+          <ThemeToggle/>
+          {user ? <Dashboard/> : <Login/>}
+
+
+
+
+
+
+    </div>
   );
 };
 

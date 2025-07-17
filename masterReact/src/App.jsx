@@ -20,6 +20,8 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import { useTheme } from "./context/ThemeContext";
 import ThemeToggle from "./components/ThemeToggle";
+import ContextApiTodo from "./components/ContextApiTodo";
+import TodoList from "./components/TodoList";
 
 
 const App = () => {
@@ -48,10 +50,12 @@ const App = () => {
   // }
 
 
-  const {user} = useAuth()
-  const {theme} = useTheme()
+  // const {user} = useAuth()
+  // const {theme} = useTheme()
   return (
-    <div className={theme === 'dark' ? 'dark-mode' : 'light-mode'}>
+    <div>
+    
+     
       {/* name.jsx
       <Name name = 'ali' />
       <Name name = 'abdullah' />
@@ -101,12 +105,15 @@ const App = () => {
         // </BrowserRouter> */}
 
 
-          <h3>Auth demo</h3>
+          {/* <h3>Auth demo</h3>
           <ThemeToggle/>
-          {user ? <Dashboard/> : <Login/>}
+          {user ? <Dashboard/> : <Login/>} */}
 
 
 
+          <h3>Todo app</h3>
+          <ContextApiTodo/>
+          <TodoList/>
 
 
 
